@@ -1,18 +1,20 @@
 import React from 'react';
-import figure from "./Figure.js";
+import Figure from "./Figure.js";
 
 
-function Card ({title, text, imageUrl, date}) {
-    return {
+
+export default function Card({title, text, url, date}) {
+  console.log(url)
+    return (
       <div className = 'card'>
-        <><h2>{title}</h2>
+         <h2>{title}</h2>
         <p>{text}</p>
-        <figure
-              imageURL={imageUrl}
-              caption={date} >
-              </figure>
+        <Figure
+              url={url}
+              caption={date} />
+             
       </div>
-    }
-  
-  };
+    )
+      
+  }
   

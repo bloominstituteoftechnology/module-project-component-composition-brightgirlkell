@@ -11,10 +11,10 @@ const URL = `https://api.nasa.gov/planetary/apod?api_key=${api_key}`
 
 
 function App() {
-const [apod, setApod] = useState()
+const [apod, setApod] = useState({})
 
   useEffect(() => {
-    function fetchPhoto(){
+   // function fetchPhoto(){
       axios.get(URL)
       .then(res=>{
         console.log(res.data)
@@ -23,20 +23,22 @@ const [apod, setApod] = useState()
       .catch(err =>{
         console.log(err.message)
       })
-    }
-    //fetchPhoto()
+   // }
+   // fetchPhoto()
   }, []);
+  console.log(apod.url)
   
   return (
    <section>
    <Card
     title={apod.title}
-    text={apod.description}
-    imageUrl={apod.url}
+    text={apod.explanation}
+    url={apod.url}
     date= {apod.date}
    />
    </section>
   )
-}
+} 
+
 
 export default App
