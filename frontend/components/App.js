@@ -3,7 +3,7 @@ import axios from 'axios';
 import Card from './Card.js';
 
 const api_key = 'DEMO_KEY'
-const URL = `https://api.nasa.gov/planetary/apod?api_key=${api_key}`
+const URL = `http://localhost:9009/api/apod?api_key=${api_key}`
 
 
 
